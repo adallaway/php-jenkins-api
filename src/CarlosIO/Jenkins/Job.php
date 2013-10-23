@@ -110,6 +110,11 @@ class Job extends Object
         return $this->_getBuild('lastBuild');
     }
 
+    public function getLastSuccessfulBuild()
+    {
+      return $this->_getBuild('lastSuccessfulBuild');
+    }
+
     public function getLastUnstableBuild()
     {
         return $this->_getBuild('lastUnstableBuild');
@@ -142,5 +147,10 @@ class Job extends Object
     private function _getBuild($property)
     {
         return $this->_getItem($property, 'Build');
+    }
+
+    public function getHealthReport()
+    {
+        return $this->_json->healthReport;
     }
 }
