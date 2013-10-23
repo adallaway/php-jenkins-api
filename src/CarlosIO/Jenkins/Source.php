@@ -9,11 +9,11 @@ class Source
     private $_url;
     private $_json;
 
-    public function __construct($url)
+    public function __construct($url, $stream_context = null)
     {
         $this->_url = $url;
 
-        $json = @file_get_contents($url);
+        $json = @file_get_contents($url, null, $stream_context);
         $this->_json = @json_decode($json);
 
         if (!$this->_json) {
