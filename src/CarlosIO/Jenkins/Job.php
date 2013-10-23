@@ -151,6 +151,6 @@ class Job extends Object
 
     public function getHealthReport()
     {
-        return $this->_json->healthReport;
+        return reset($this->_json->healthReport);
     }
 }
