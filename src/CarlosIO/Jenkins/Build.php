@@ -26,6 +26,11 @@ class Build extends Object
         return $this->_json->timestamp;
     }
 
+    public function getResult()
+    {
+        return $this->_json->result;
+    }
+
     public function getEstimatedDuration()
     {
         return $this->_json->estimatedDuration;
